@@ -4,6 +4,9 @@ import { AxiosResponse } from 'axios';
 
 import { format } from 'date-fns-tz';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
@@ -95,10 +98,22 @@ const Dashboard: React.FC = () => {
             <table>
               <thead>
                 <tr>
-                  <th>Título</th>
-                  <th>Preço</th>
-                  <th>Categoria</th>
-                  <th>Data</th>
+                  <th>
+                    Título&nbsp;
+                    <FontAwesomeIcon icon={faCaretDown} />
+                  </th>
+                  <th>
+                    Preço&nbsp;
+                    <FontAwesomeIcon icon={faCaretDown} />
+                  </th>
+                  <th>
+                    Categoria&nbsp;
+                    <FontAwesomeIcon icon={faCaretDown} />
+                  </th>
+                  <th>
+                    Data&nbsp;
+                    <FontAwesomeIcon icon={faCaretDown} />
+                  </th>
                 </tr>
               </thead>
 
