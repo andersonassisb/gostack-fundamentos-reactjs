@@ -33,7 +33,7 @@ export const Container = styled.div<ContainerProps>`
           width: 73px;
           height: 2px;
           bottom: 0;
-          border-bottom: 1px solid #FF872C;
+          border-bottom: 1px solid #ff872c;
           opacity: 0.6;
         }
       }
