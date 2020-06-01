@@ -5,7 +5,7 @@ import { AxiosResponse } from 'axios';
 import { format } from 'date-fns-tz';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
@@ -42,8 +42,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadTransactions(): Promise<void> {
-      await api.get('/transactions').then((response: AxiosResponse<any>) => {
-        console.log(response.data);
+      await api.get('/transactions').then((response: AxiosResponse) => {
         if (response.data) {
           setTransactions(response.data.transactions);
           setBalance(response.data.balance);
@@ -100,19 +99,22 @@ const Dashboard: React.FC = () => {
                 <tr>
                   <th>
                     Título&nbsp;
-                    <FontAwesomeIcon icon={faCaretDown} />
+                    <FontAwesomeIcon icon={faAngleDown} />
                   </th>
                   <th>
                     Preço&nbsp;
-                    <FontAwesomeIcon icon={faCaretDown} />
+                    <FontAwesomeIcon icon={faAngleDown} />
                   </th>
                   <th>
                     Categoria&nbsp;
-                    <FontAwesomeIcon icon={faCaretDown} />
+                    <FontAwesomeIcon icon={faAngleDown} />
                   </th>
                   <th>
                     Data&nbsp;
-                    <FontAwesomeIcon icon={faCaretDown} />
+                    <FontAwesomeIcon
+                      icon={faAngleUp}
+                      style={{ color: '#FF872C' }}
+                    />
                   </th>
                 </tr>
               </thead>
